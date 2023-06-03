@@ -52,7 +52,7 @@
   }
 }
 .order-page-main-con .oders-con .order-page-top h1 {
-  color: #3c91e6;
+  color: #ea9319;
   margin-top: 20px;
   font-size: 30px;
 }
@@ -88,7 +88,7 @@
   flex-direction: row;
 }
 .order-page-main-con .oders-con .order-page-top .order-status .active-category {
-  background: #3c91e6;
+  background: #ea9319;
   color: white;
 }
 .order-page-main-con .each-order-con {
@@ -118,7 +118,7 @@
   color: blak;
 }
 .order-page-main-con .each-order-con .each-order .order-icon {
-  color: #3c91e6;
+  color: #ea9319;
   font-size: 30px;
 }
 .order-page-main-con .each-order-con .each-order .order-details {

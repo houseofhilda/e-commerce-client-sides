@@ -27,7 +27,6 @@ body {
 }
 
 .login-reg-main-con {
-  background-image: url("/undraw_Fingerprint_re_uf3f.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -96,7 +95,7 @@ body {
   color: #666;
 }
 .login-reg-main-con .login-main-con .login-form .input-main-con .input-con {
-  border: 1px solid #3c91e6;
+  border: 1px solid #ea9319;
   border-radius: 3px;
   display: flex;
   justify-content: center;
@@ -116,7 +115,7 @@ body {
   width: 100%;
   height: 100%;
   border: none;
-  outline-color: #3c91e6;
+  outline-color: #ea9319;
   font-size: 15px;
   padding: 5px;
   padding-left: 40px;
@@ -137,7 +136,7 @@ body {
 .login-reg-main-con .login-main-con .login-form .forgot-pw {
   margin-top: 10px;
   line-height: 2;
-  color: #3c91e6;
+  color: #ea9319;
 }
 .login-reg-main-con .login-main-con .login-form .login-btn-link {
   margin-top: 15px;
@@ -163,7 +162,7 @@ body {
   width: 100%;
   height: 100%;
   font-size: 15px;
-  background: #3c91e6;
+  background: #ea9319;
   border: none;
   color: white;
   cursor: pointer;
@@ -173,7 +172,7 @@ body {
 }
 .login-reg-main-con .login-main-con .login-form .login-registration-link {
   line-height: 2;
-  color: #3c91e6;
+  color: #ea9319;
 }
 .login-reg-main-con .otp-con {
   padding: 10px;
@@ -187,7 +186,7 @@ body {
   overflow-y: scroll;
 }
 .login-reg-main-con .otp-con h3 {
-  color: #3c91e6;
+  color: #ea9319;
   margin-bottom: 20px;
 }
 .login-reg-main-con .otp-con .login-form {
@@ -240,7 +239,7 @@ body {
   cursor: pointer;
   position: fixed;
   top: 30px;
-  background: rgba(60, 145, 230, 0.7764705882);
+  background: #ea9319;
   border: 1px solid rgba(128, 128, 128, 0.168627451);
   color: white;
   width: 70px;
@@ -266,7 +265,7 @@ body {
   width: 100%;
   max-width: 500px;
   height: 50px;
-  background: #3c91e6;
+  background: #ea9319;
   border: none;
   color: white;
   font-weight: bold;

@@ -28,7 +28,7 @@ $font-light: #666;
 $bg-gray: #eee;
 $bg-dark-gray: #444;
 $bg-dark: #342e37;
-$txt-blue: #3c91e6;
+$txt-blue: #ea9319;
 $txt-light-blue: #cfe8ff;
 
 @mixin flexDisplay($justifyProp, $alignProp, $flexDirection) {
@@ -84,7 +84,7 @@ $txt-light-blue: #cfe8ff;
       position: fixed;
       top: 10px;
       left: 15px;
-      background: #3c91e6c6;
+      background: #ea9319;
       border: 1px solid #8080802b;
       color: white;
       width: 70px;

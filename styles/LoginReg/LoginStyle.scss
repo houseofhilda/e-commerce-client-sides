@@ -43,7 +43,7 @@ $bg-gray: #eee;
 $bg-dark-gray: #444;
 $bg-dark: #342e37;
 $txt-blue-dark: #183f65;
-$txt-blue: #3c91e6;
+$txt-blue: #ea9319;
 $txt-light-blue: #cfe8ff;
 
 @mixin flexDisplay($justifyProp, $alignProp, $flexDirection) {
@@ -80,7 +80,7 @@ $txt-light-blue: #cfe8ff;
 }
 
 .login-reg-main-con {
-  background-image: url("/undraw_Fingerprint_re_uf3f.png");
+  // background-image: url("/undraw_Fingerprint_re_uf3f.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -293,7 +293,7 @@ $txt-light-blue: #cfe8ff;
           position: fixed;
           top: 30px;
           // left: 15px;
-          background: #3c91e6c6;
+          background: #ea9319;
           border: 1px solid #8080802b;
           color: white;
           width: 70px;

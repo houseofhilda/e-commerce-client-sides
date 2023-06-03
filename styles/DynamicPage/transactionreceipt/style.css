@@ -42,7 +42,7 @@
   position: fixed;
   top: 10px;
   left: 15px;
-  background: rgba(60, 145, 230, 0.7764705882);
+  background: #ea9319;
   border: 1px solid rgba(128, 128, 128, 0.168627451);
   color: white;
   width: 70px;
@@ -61,7 +61,7 @@
 }
 .receipt-main-con .receipt-con h3 {
   font-size: 25px;
-  color: #3c91e6;
+  color: #ea9319;
 }
 .receipt-main-con .receipt-con p {
   font-size: 15px;
@@ -179,9 +179,9 @@
   margin: 0 auto;
   margin-top: 10px;
   height: 50px;
-  border: 2px solid #3c91e6;
+  border: 2px solid #ea9319;
   text-align: center;
-  background: #3c91e6;
+  background: #ea9319;
   color: white;
   cursor: pointer;
   display: flex;
@@ -191,7 +191,7 @@
 }
 .receipt-main-con .receipt-con .download-page p:hover {
   background: whitesmoke;
-  color: #3c91e6;
+  color: #ea9319;
 }
 .receipt-main-con .main-detail-con {
   display: flex;
@@ -359,7 +359,7 @@
   margin-top: 10px;
   margin-bottom: 30px;
   font-size: 15px;
-  background: #3c91e6;
+  background: #ea9319;
   color: white;
   border: none;
 }
@@ -381,7 +381,7 @@
   top: -10px;
 }
 .receipt-main-con .receipt-heading h3 {
-  color: #3c91e6;
+  color: #ea9319;
   font-size: 25px;
   margin-top: 35px;
 }
