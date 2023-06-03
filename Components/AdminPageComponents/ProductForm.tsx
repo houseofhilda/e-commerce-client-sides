@@ -6,7 +6,6 @@ import { db, storage } from "../../Firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import tester from "../AdminPageComponents/StoreItems";
 function ProductForm() {
-  
   // GENERATE IMAGE REVIEW
   const filePickerRef1 = useRef<HTMLInputElement>("" || null);
   const filePickerRef2 = useRef<HTMLInputElement>("" || null);
@@ -28,12 +27,12 @@ function ProductForm() {
     try {
       const formData = new FormData();
       formData.append("file", file);
-       formData.append("upload_preset", "houseofhilda");
+      formData.append("upload_preset", "houseofhilda");
 
-       const response = await axios.post(
-         `https://api.cloudinary.com/v1_1/dk3iqiy2e/image/upload`,
-         formData
-       );
+      const response = await axios.post(
+        `https://api.cloudinary.com/v1_1/dk3iqiy2e/image/upload`,
+        formData
+      );
 
       return response.data.secure_url;
     } catch (error) {
@@ -278,8 +277,8 @@ function ProductForm() {
         <select {...register("productcategory", { required: true })}>
           <option value="">Select</option>
           <option value="Shoe">Shoe</option>
-          <option value="Cloth">Cloth</option>
-          <option value="Watch">Watch</option>
+          <option value="Bag">Bag</option>
+          <option value="Slide">Slide</option>
         </select>
         {errors.productcategory && (
           <span
