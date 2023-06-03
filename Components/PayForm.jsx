@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect, ChangeEvent } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { TiArrowBack } from "react-icons/ti";
-import { checkOut } from "../Services/functions";
+// import { checkOut } from "../Services/functions";
 import { useRouter } from "next/router";
 import { Transaction } from "firebase/firestore";
+import { checkOut } from "../Services/functions";
 
 function PayForm({
   product,
@@ -96,10 +97,16 @@ function PayForm({
   // CHECKOUT
   const [transactionDetails, setTransactionDetails] = useState();
   const router = useRouter();
+  const [btnStatus, setBtnStatus] = useState(true);
   const checkOutpayment = async () => {
     const userData = await checkOut(productData, setTransactionDetails);
+    setBtnStatus(false);
   };
-
+  const cancelTransaction = async () => {
+    setBtnStatus(false);
+    router.push("/");
+  };
+  // console.log(product?.productcategory);
   return (
     <div className="modal-main-con">
       <div className="modal-relative">
@@ -231,25 +238,33 @@ function PayForm({
                   </p>
                 </>
               )}
-
-              <div className="checkout-btn" onClick={() => checkOutpayment()}>
-                <button>
-                  CHECK OUT ( ₦{" "}
-                  {product ? (
-                    `${total.toLocaleString()}`
-                  ) : (
-                    <>
-                      {" "}
-                      {(
-                        parseInt(totalAmount) +
-                        parseInt(confirmDetails?.state?.split(",")[1]) +
-                        parseInt(confirmDetails.homedelivery)
-                      ).toLocaleString()}
-                    </>
-                  )}{" "}
-                  )
-                </button>
-              </div>
+              {btnStatus ? (
+                <div className="checkout-btn" onClick={() => checkOutpayment()}>
+                  <button>
+                    CHECK OUT ( ₦{" "}
+                    {product ? (
+                      `${total.toLocaleString()}`
+                    ) : (
+                      <>
+                        {" "}
+                        {(
+                          parseInt(totalAmount) +
+                          parseInt(confirmDetails?.state?.split(",")[1]) +
+                          parseInt(confirmDetails.homedelivery)
+                        ).toLocaleString()}
+                      </>
+                    )}{" "}
+                    )
+                  </button>
+                </div>
+              ) : (
+                <div
+                  className="checkout-btn"
+                  onClick={() => cancelTransaction()}
+                >
+                  <button>CANCEL TRANSACTION</button>
+                </div>
+              )}
             </div>
           )}{" "}
           {/* PAYMENT FORM*/}
@@ -286,43 +301,54 @@ function PayForm({
 
             <div>
               <select {...register("state", { required: true })}>
-                <option value="">Select State</option>
-                <option value="Abuja,2000">Abuja</option>
-                <option value="Abia,2000">Abia</option>
-                <option value="Adamawa,2000">Adamawa</option>
-                <option value="AkwaIbom,2000">Akwa Ibom</option>
-                <option value="Anambra,2000">Anambra</option>
-                <option value="Bauchi,2000">Bauchi</option>
-                <option value="Bayelsa,2000">Bayelsa</option>
-                <option value="Benue,2000">Benue</option>
-                <option value="Borno,2000">Borno</option>
-                <option value="CrossRiver,2000">Cross River</option>
-                <option value="Delta,2000">Delta</option>
-                <option value="Ebonyi,2000">Ebonyi</option>
-                <option value="Edo,2000">Edo</option>
-                <option value="Ekiti,2000">Ekiti</option>
-                <option value="Enugu,2000">Enugu</option>
-                <option value="Gombe,2000">Gombe</option>
-                <option value="Imo,2000">Imo</option>
-                <option value="Jigawa,2000">Jigawa</option>
-                <option value="Kaduna,2000">Kaduna</option>
-                <option value="Kano,2000">Kano</option>
-                <option value="Katsina,2000">Katsina</option>
-                <option value="Kebbi,2000">Kebbi</option>
-                <option value="Kogi,2000">Kogi</option>
-                <option value="Kwara,2000">Kwara</option>
-                <option value="Lagos,2000">Lagos</option>
-                <option value="Niger,2000">Niger</option>
-                <option value="Ogun,2000">Ogun</option>
-                <option value="Ondo,2000">Ondo</option>
-                <option value="Osun,2000">Osun</option>
-                <option value="Oyo,2000">Oyo</option>
-                <option value="Plateau,2000">Plateau</option>
-                <option value="Sokoto,2000">Sokoto</option>
-                <option value="River,2000">River</option>
-                <option value="Taraba,2000">Taraba</option>
-                <option value="Yobe,2000">Yobe</option>
-                <option value="Zamfara,2000">Zamfara</option>
+                {product?.productcategory === "Software" ? (
+                  <>
+                    <option value="">How do u want it</option>
+                    <option value="softcopy,500">Via email</option>
+                    <option value="google drive,500">Via google drive</option>
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    <option value="">Select State</option>
+                    <option value="Abuja,3500">Abuja</option>
+                    <option value="Abia,2500">Abia</option>
+                    <option value="Adamawa,3500">Adamawa</option>
+                    <option value="AkwaIbom,2500">Akwa Ibom</option>
+                    <option value="Anambra,2500">Anambra</option>
+                    <option value="Bauchi,3500">Bauchi</option>
+                    <option value="Bayelsa,2500">Bayelsa</option>
+                    <option value="Benue,3500">Benue</option>
+                    <option value="Borno,3500">Borno</option>
+                    <option value="CrossRiver,2500">Cross River</option>
+                    <option value="Delta,2500">Delta</option>
+                    <option value="Ebonyi,2500">Ebonyi</option>
+                    <option value="Edo,0">Edo</option>
+                    <option value="Ekiti,2500">Ekiti</option>
+                    <option value="Enugu,2500">Enugu</option>
+                    <option value="Gombe,3500">Gombe</option>
+                    <option value="Imo,2500">Imo</option>
+                    <option value="Jigawa,3500">Jigawa</option>
+                    <option value="Kaduna,3500">Kaduna</option>
+                    <option value="Kano,3500">Kano</option>
+                    <option value="Katsina,3500">Katsina</option>
+                    <option value="Kebbi,3500">Kebbi</option>
+                    <option value="Kogi,3500">Kogi</option>
+                    <option value="Kwara,2500">Kwara</option>
+                    <option value="Lagos,2500">Lagos</option>
+                    <option value="Niger,3500">Niger</option>
+                    <option value="Ogun,2500">Ogun</option>
+                    <option value="Ondo,2500">Ondo</option>
+                    <option value="Osun,2500">Osun</option>
+                    <option value="Oyo,2500">Oyo</option>
+                    <option value="Plateau,3500">Plateau</option>
+                    <option value="Sokoto,3500">Sokoto</option>
+                    <option value="River,2500">River</option>
+                    <option value="Taraba,3500">Taraba</option>
+                    <option value="Yobe,3500">Yobe</option>
+                    <option value="Zamfara,3500">Zamfara</option>
+                  </>
+                )}{" "}
               </select>
               {errors.state && (
                 <span
@@ -341,9 +367,20 @@ function PayForm({
             {/* home delivery */}
             <div>
               <select {...register("homedelivery", { required: true })}>
-                <option value="">Delivery</option>
-                <option value="2000">Yes, home delivery</option>
-                <option value="0">No, I will come pick it </option>
+                {product?.productcategory === "Software" ? (
+                  <>
+                    {" "}
+                    <option value="">Operating system</option>
+                    <option value="500">Mac</option>
+                    <option value="0">Windows</option>
+                  </>
+                ) : (
+                  <>
+                    <option value="">Delivery</option>
+                    <option value="2500">Yes,I want home delivery</option>
+                    <option value="0">No, I will come pick it </option>
+                  </>
+                )}
               </select>
               {errors.homedelivery && (
                 <span

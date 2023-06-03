@@ -14,7 +14,7 @@ import {
 import { TiArrowBack } from "react-icons/ti";
 import useSWR from "swr";
 import Loader from "../../../Components/Loader";
-const API = "http://localhost:1234/api/v1/transaction/getsingletransaction";
+// const API = "http://localhost:1234/api/v1/transaction/getsingletransaction";
 function transactionrecipt() {
   const router = useRouter();
   const { transactID } = router.query;
@@ -184,7 +184,7 @@ function transactionrecipt() {
           <div className="download-page">
             <p onClick={() => saveAsImage(document.body)}>Print page</p>
             <a
-              href="https://wa.me/+2348104015180?text=Hello, I am a customer on your platfor 'AJIS STORS' and i need your support."
+              href="https://wa.me/+2348067279806?text=Hello, I am a customer on your platfor 'HOUSE OF HILDA' and i need your support."
               target="_blank"
             >
               {" "}

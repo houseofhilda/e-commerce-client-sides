@@ -117,7 +117,9 @@ function ResendOTP() {
         <div className="login-top-title">
           <h2>RE-Send OTP</h2>
           <p>Enter your email to verify your account</p>
-          <p>Home / Signup</p>
+          <Link href="/">
+            <p>Home / Signup</p>
+          </Link>
         </div>
         <div className="form-con">
           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
@@ -241,7 +243,7 @@ function EnterOTP({ setNotificationModal, router }) {
                 flexDirection: "row",
               }}
               inputStyle={{
-                border: "2px solid #3c91e6",
+                border: "2px solid #ea9319",
                 width: "100%",
                 height: "100%",
                 fontSize: "30px",

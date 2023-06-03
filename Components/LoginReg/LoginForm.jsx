@@ -46,17 +46,22 @@ function LoginForm({ flipLogin }) {
       useremail: data.useremail.toLowerCase(),
       password: data.password,
     };
-    console.log(details);
+
+    localStorage.setItem("reLogin", JSON.stringify(details));
+
     logIN(setLoading, router, setErrMsg, details);
   };
-// mm
-  
+  // mm
+
   return (
     <div className="login-main-con">
       <div className="login-top-title">
         <h2>Sign In</h2>
         <p>Sign in to access you account</p>
-        <p>Home / Signin</p>
+
+        <Link href="/">
+          <p>Home / Signin</p>
+        </Link>
       </div>
       <div className="form-con">
         <form className="login-form" onSubmit={handleSubmit(onLogin)}>

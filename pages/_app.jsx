@@ -19,6 +19,8 @@ import { useRouter } from "next/router";
 // mantine
 import { MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
+import axios from "axios";
+import Cookies from "js-cookie";
 export const CartQuantityContext = createContext();
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -35,6 +37,26 @@ export default function MyApp({ Component, pageProps }) {
       }
       if (userData?.user?.block === true) {
         router.push("/Login");
+      }
+      if (!userData) {
+        let userInLocal = localStorage.getItem("reLogin");
+        let logInGuestUser = JSON.parse(userInLocal);
+
+        if (logInGuestUser) {
+          axios
+            .post(
+              "https://houseofhilda.onrender.com/api/v1/userverification/loginuser",
+              logInGuestUser
+            )
+            .then((resp) => {
+              const token = resp.data.data;
+              Cookies.set("JWTtoken", token);
+              // router.push("/");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
       }
     }
     fetchSessionUser();

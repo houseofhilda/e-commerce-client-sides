@@ -105,10 +105,10 @@ function StoreID() {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "ajis_store");
+      formData.append("upload_preset", "houseofhilda");
 
       const response = await axios.post(
-        `https://api.cloudinary.com/v1_1/isreal/image/upload`,
+        `https://api.cloudinary.com/v1_1/dk3iqiy2e/image/upload`,
         formData
       );
 
@@ -139,10 +139,10 @@ function StoreID() {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "ajis_store");
+      formData.append("upload_preset", "houseofhilda");
 
       const response = await axios.post(
-        `https://api.cloudinary.com/v1_1/isreal/image/upload`,
+        `https://api.cloudinary.com/v1_1/dk3iqiy2e/image/upload`,
         formData
       );
 
@@ -173,10 +173,10 @@ function StoreID() {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "ajis_store");
+      formData.append("upload_preset", "houseofhilda");
 
       const response = await axios.post(
-        `https://api.cloudinary.com/v1_1/isreal/image/upload`,
+        `https://api.cloudinary.com/v1_1/dk3iqiy2e/image/upload`,
         formData
       );
 
@@ -207,10 +207,10 @@ function StoreID() {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "ajis_store");
+      formData.append("upload_preset", "houseofhilda");
 
       const response = await axios.post(
-        `https://api.cloudinary.com/v1_1/isreal/image/upload`,
+        `https://api.cloudinary.com/v1_1/dk3iqiy2e/image/upload`,
         formData
       );
 

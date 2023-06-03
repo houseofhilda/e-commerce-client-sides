@@ -88,7 +88,7 @@ function admintransaction() {
     setBtnLoading(false);
     await axios
       .patch(
-        "https://api-j.onrender.com/api/v1/transaction/updatetransaction/" +
+        "https://houseofhilda.onrender.com/api/v1/transaction/updatetransaction/" +
           `${transactID}`,
         {
           status: data.orderstatus,
@@ -311,7 +311,7 @@ function admintransaction() {
                       userData?.user[0]?.userphonenumber
                     }?text=Hello, I am a ${
                       session?.user.username
-                    } from AJIS STORES , I am chatting as regards your Order with Ref No. ${
+                    } from HOUSE OF HILDA, I am chatting as regards your Order with Ref No. ${
                       userData?.paystackRef
                     } made on ${userData?.timestamp
                       .substring(0, 20)

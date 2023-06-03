@@ -1,18 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  onSnapshot,
-  query,
-  where,
-} from "firebase/firestore";
-import { db } from "../../Firebase";
-import { useEffect, useState } from "react";
-import { addToCart, getSessionUser } from "../../Services/functions";
-import { jgi } from "../Topbar";
 
 function Products({ products, addToCar }) {
   const halfLength = Math.ceil(products.length / 2);

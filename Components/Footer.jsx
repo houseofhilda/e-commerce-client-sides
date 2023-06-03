@@ -1,12 +1,17 @@
-// import React from "react";
+import React from "react";
+import { RiFacebookLine, RiTwitterLine } from "react-icons/ri";
+import {
+  AiOutlineYoutube,
+  AiOutlineInstagram,
+  AiOutlineWhatsApp,
+} from "react-icons/ai";
 import Link from "next/link";
 import { getSessionUser } from "../Services/functions";
-// icopns
-import { BsFacebook, BsWhatsapp } from "react-icons/bs";
-import { AiFillTwitterCircle, AiTwotoneMail } from "react-icons/ai";
-import { FaInstagramSquare } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
 function Footer() {
+  const router = useRouter();
   // FETCHING SESSION USER NAME AND CART LENGTH
   const [userPosition, setUserPosition] = useState();
   useEffect(() => {
@@ -17,98 +22,141 @@ function Footer() {
     userName();
   }, [userPosition]);
 
+  // // FETCHING SESSION USER NAME AND CART LENGTH
+  const [name, setName] = useState("");
+  const [cartLength, setCartLength] = useState([]);
+  const [session, setSession] = useState([]);
+  useEffect(() => {
+    async function fetchSessionUser() {
+      const userData = await getSessionUser();
+      if (userData && userData.user) {
+        setSession(userData);
+        setName(userData?.user?.username);
+        setCartLength(userData?.user.cart);
+      }
+    }
+    fetchSessionUser();
+  }, [router]);
   // console.log(userPosition);
+
+  // LOGOUT
+  const logOUT = () => {
+    Cookies.remove("JWTtoken");
+    location.reload();
+    router.push("/");
+    // localStorage.removeItem("reLogin");
+  };
   return (
-    <section className="footer">
-      <div className="box-container">
-        <div className="box">
-          <h3>Our Location</h3>
-          <a href="">
-            <i className="fas fa-map-marker-alt"></i> Nigeria
-          </a>
+    <div className="footer-main-con">
+      <div className="footer-con">
+        <div className="top-con">
+          <div className="img-con">
+            <img
+              src="https://res.cloudinary.com/dk3iqiy2e/image/upload/v1685825962/WhatsApp_Image_2023-05-30_at_12.36.37_AM-removebg-preview_kxnfud.png"
+              alt="img"
+            />
+          </div>
+          {/* <p>RSO/Shipping/Marine/Procurement/Logistics</p> */}
+          <div className="icon-con">
+            <RiFacebookLine className="icon" />
+            <AiOutlineYoutube className="icon" />
+            <AiOutlineInstagram className="icon" />
+            <RiTwitterLine className="icon" />
+            <AiOutlineWhatsApp className="icon" />
+          </div>
         </div>
-
-        <div className="box">
-          <h3>Quick Links</h3>
-          <Link href="/">
-            <i></i> Home
-          </Link>
-          <Link href="/products">
-            <i></i> Products
-          </Link>
-          <Link href="/orders">
-            <i></i> Order
-          </Link>
-          <a
-            href="https://wa.me/+2348104015180?text=Hello, I am a customer on your platfor 'AJIS STORS' and i need your support."
-            target="_blank"
-          >
-            <i></i> surport
-          </a>
-        </div>
-
-        <div className="box">
-          <h3>Extra links</h3>
-          <a href="">
-            <i></i> privacy policy
-          </a>
-          <a href="">
-            <i></i> payment method
-          </a>
-          {userPosition === "admin" || userPosition === "staff" ? (
-            <Link href="/Adminpage/AdminDashboard">
-              <i></i>Admin Login
+        <div className="lower-con">
+          <div className="quick-link">
+            <h3>Navigate</h3>
+            <Link href="/" className="links">
+              Home
             </Link>
-          ) : (
-            ""
-          )}{" "}
+            <Link href="/products" className="links">
+              Products
+            </Link>
+            <Link href="/orders" className="links">
+              Orders
+            </Link>
+            <a
+              href="https://wa.me/+2348067279806?text=Hello, I am a customer on your platfor 'House of Hilda' and I need your support."
+              className="links"
+            >
+              Support
+            </a>
+          </div>
+
+          <div className="quick-link">
+            <h3>Other Links</h3>
+            <Link href="/team" className="links">
+              Company profile
+            </Link>
+            {userPosition === "admin" || userPosition === "staff" ? (
+              <Link href="/Adminpage/AdminDashboard" className="links">
+                <i></i>Admin Login
+              </Link>
+            ) : (
+              ""
+            )}
+            {name ? (
+              <button
+                style={{
+                  height: "70%",
+                  color: "#e9a321",
+                  cursor: "pointer",
+                  border: ".1px solid #e9a321",
+                  width: "100px",
+                }}
+                onClick={() => logOUT()}
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                href="/loginpage"
+                style={{
+                  height: "70%",
+                  cursor: "pointer",
+                  width: "100px",
+                }}
+              >
+                <button
+                  style={{
+                    height: "100%",
+                    color: "#e9a321",
+                    cursor: "pointer",
+                    border: ".1px solid #e9a321",
+                    width: "100px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Sign in
+                </button>
+              </Link>
+            )}
+          </div>
+          <div className="quick-link">
+            <h3>Contact</h3>
+            <p className="links">
+              <b>E-mail Address: </b>
+              <a href="mailto:piudaonline@yahoo.com">
+                HOUSEOFHILDA.ng@gmail.com
+              </a>{" "}
+            </p>
+            <p className="links">
+              <b>Physical Address:</b> Shop 39 Gabano shopping Complex directly
+              opposite UBTH, Benin city, Edo state, Nigeria
+            </p>
+            <p className="links">(+234) 806 727 9806</p>
+          </div>
         </div>
-
-        <div
-          className="box"
-          // style={{ width: "100%", maxWidth: "800px", margin: "0 auto" }}
-        >
-          <h3>contact info</h3>
-          <a href="#">
-            {" "}
-            <i className="fas fa-phone"></i> +234-810-401-5180{" "}
-          </a>
-          <a href="#">
-            {" "}
-            <i className="fas fa-envelope"></i>justiceyba@gmail.com
-          </a>
-          <img
-            src="https://res.cloudinary.com/isreal/image/upload/v1679580817/jayflix%20vid%20posters/worldmap_mibrmb.png"
-            className="map"
-            alt=""
-          />
-        </div>
       </div>
-
-      <div className="share">
-        <a href="#">
-          <BsFacebook />
-        </a>
-        <a href="#">
-          <AiFillTwitterCircle />
-        </a>
-        <a href="#">
-          <FaInstagramSquare />
-        </a>
-        <a href="#">
-          <BsWhatsapp />
-        </a>
-        <a href="#">
-          <AiTwotoneMail />
-        </a>
+      <div className="copyright">
+        <p>
+          Copyright © House of Hilda {new Date().getFullYear()}. All Rights
+          Reserved.
+        </p>
       </div>
-
-      <div className="credit">
-        {" "}
-        created by <span>Justice Isreal Agbonma</span> | copyright &copy;2023 |
-        all rights reserved!{" "}
-      </div>
-    </section>
+    </div>
   );
 }
 

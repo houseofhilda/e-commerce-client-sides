@@ -27,10 +27,13 @@ function Topbar() {
     <div id="content">
       <nav>
         <span className="top-title">
-          <GiBookCover />
-          <h1>AJIS</h1>
+          <img
+            src="https://res.cloudinary.com/dk3iqiy2e/image/upload/v1685825962/WhatsApp_Image_2023-05-30_at_12.36.37_AM-removebg-preview_kxnfud.png"
+            alt=""
+            style={{ height: "50px" }}
+          />
         </span>
-        <div style={{ textAlign: "center", color: "#3d91e6" }}>
+        <div style={{ textAlign: "center", color: "#03a8a8" }}>
           {/* <p>{name}</p> */}
           <p style={{ textTransform: "uppercase" }}>{userPosition}</p>
         </div>

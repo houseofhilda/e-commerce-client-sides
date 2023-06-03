@@ -25,6 +25,7 @@ import Footer from "../Components/Footer";
 import Modal from "../Components/Modal";
 import Review from "../Components/Homepage/Review";
 import Advert from "../Components/Homepage/Advert";
+import Advantages from "../Components/Advantages";
 import { AuthGuard } from "./api/auth/AuthGuard.";
 import { useRouter } from "next/router";
 import { addToCart, allCartItem, getSessionUser } from "../Services/functions";
@@ -103,6 +104,8 @@ const Homepage = () => {
 
           <Group position="center"></Group>
           <Banner />
+          <div className="category-con">{/* <h1>CATEGORIES</h1> */}</div>
+          <Advert />
           {/* NEW ARRIVALS */}
           <NewArrivals />
           {/* <Advert /> */}
@@ -113,6 +116,7 @@ const Homepage = () => {
           {/* <NewsLetter /> */}
           {/* PROMO */}
           <Promo />
+          <Advantages />
           {/* REVIEWS */}
           <Review />
           {/* <Advert /> */}

@@ -51,12 +51,7 @@ function Topbar({ dynamictriger, triga }) {
     fetchSessionUser();
   }, [router, triga, dynamictriger]);
   // console.log(session.user.position);
-  // LOGOUT
-  const logOUT = () => {
-    Cookies.remove("JWTtoken");
-    location.reload();
-    router.push("/");
-  };
+
   return (
     <div className="topbar-main-con">
       {/* TOPBAR  */}
@@ -65,58 +60,17 @@ function Topbar({ dynamictriger, triga }) {
         {/* logo side */}
         <div className="topbar-top-con-left">
           <Link href="/">
-            <SiCoinmarketcap className="icon" />
+            {/* <SiCoinmarketcap className="icon" /> */}
+            <img
+              style={{ height: "40px" }}
+              className="icon"
+              src="https://res.cloudinary.com/dk3iqiy2e/image/upload/v1685825962/WhatsApp_Image_2023-05-30_at_12.36.37_AM-removebg-preview_kxnfud.png"
+              alt=""
+            />
           </Link>
-          <p style={{ marginLeft: "5px", color: "#3c91e6" }}>
+          <p style={{ marginLeft: "5px", color: "#e9a321" }}>
             {name && "Hello! " + name.split(" ")[0]}
           </p>
-        </div>
-        <div
-          style={{
-            marginLeft: "auto",
-            height: "100%",
-            color: "#3c91e6",
-            justifyContents: "center",
-            alignItems: "center",
-            display: "flex",
-            padding: "0 10px",
-          }}
-        >
-          {name ? (
-            <button
-              style={{
-                height: "70%",
-                color: "gray",
-                cursor: "pointer",
-                border: ".1px solid gray",
-                width: "100px",
-              }}
-              onClick={() => logOUT()}
-            >
-              Sign Out
-            </button>
-          ) : (
-            <Link
-              href="/loginpage"
-              style={{
-                height: "70%",
-                cursor: "pointer",
-                width: "100px",
-              }}
-            >
-              <button
-                style={{
-                  height: "100%",
-                  color: "#3c91e6",
-                  border: "1px solid #3c91e6",
-                  width: "100px",
-                  cursor: "pointer",
-                }}
-              >
-                Sign in
-              </button>
-            </Link>
-          )}
         </div>
         {/* cart and user icon */}
         <div className="topbar-top-con-right">
@@ -170,7 +124,7 @@ function Topbar({ dynamictriger, triga }) {
               </li>
             </Link>
             <a
-              href="https://wa.me/+2348104015180?text=Hello, I am a customer on your platfor 'AJIS STORS' and i need your support."
+              href="https://wa.me/+2348067279806?text=Hello, I am a customer on your platfor 'Houseof Hilda' and i need your support."
               target="_blank"
             >
               <li>

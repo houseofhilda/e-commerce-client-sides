@@ -39,14 +39,16 @@ function Sidebar() {
       setActive(6);
       return;
     }
-   
   }, [router.pathname]);
   return (
     <div>
       <section id="sidebar" className="sidebar">
         <a className="brand">
-          <GiBookCover className="bx" />
-          <span className="text">AJIS STORE</span>
+          <img
+            src="https://res.cloudinary.com/dk3iqiy2e/image/upload/v1685825962/WhatsApp_Image_2023-05-30_at_12.36.37_AM-removebg-preview_kxnfud.png"
+            alt=""
+            style={{ width: "100px", marginTop: "40px" }}
+          />
         </a>
         <ul className="side-menu top">
           <li

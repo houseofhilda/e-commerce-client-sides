@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Blockquote } from "@mantine/core";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../../Firebase";
+import Link from "next/link";
 const defaultAdImg =
   "https://res.cloudinary.com/isreal/image/upload/v1682609506/E-Commerce%20Project/advert_ehvsy1.png";
 
@@ -29,7 +30,7 @@ function Advert() {
   useEffect(() => {
     setAdvertLink(advertDetails.map((item) => item.data().adlink));
   }, [db, advertDetails]);
- 
+
   return (
     <div className="ad-con">
       <Carousel
@@ -49,12 +50,17 @@ function Advert() {
         <Carousel.Slide>
           <div className="ad-img">
             {advertImg.length > 0 ? (
-              <a href={"https://" + `${advertLink[0]}`} target="_blank">
-                <img src={advertImg[0][0]} alt="add" />
-              </a>
+              <Link href="/products">
+                <img
+                  src={advertImg[0][0]}
+                  alt="add"
+                  // style={{ height: "190px" }}
+                />
+                <h3>household items</h3>
+              </Link>
             ) : (
               <a
-                href="https://wa.me/+2349029356196?text=Hello, I came across your platform and i would like to place an advert."
+                href="https://wa.me/08067279806?text=Hello, I came across your platform and i would like to place an advert."
                 target="_blank"
               >
                 <img src={defaultAdImg} alt="add" />
@@ -65,12 +71,17 @@ function Advert() {
         <Carousel.Slide>
           <div className="ad-img">
             {advertImg?.length > 0 ? (
-              <a href={"https://" + `${advertLink[0]}`} target="_blank">
-                <img src={advertImg[0][1]} alt="add" />
-              </a>
+              <Link href="/products">
+                <img
+                  src={advertImg[0][1]}
+                  alt="add"
+                  // style={{ height: "190px" }}
+                />
+                <h3>fashion & style</h3>
+              </Link>
             ) : (
               <a
-                href="https://wa.me/+2349029356196?text=Hello, I came across your platform and i would like to place an advert."
+                href="https://wa.me/08067279806?text=Hello, I came across your platform and i would like to place an advert."
                 target="_blank"
               >
                 <img src={defaultAdImg} alt="add" />
@@ -81,12 +92,17 @@ function Advert() {
         <Carousel.Slide>
           <div className="ad-img">
             {advertImg.length > 0 ? (
-              <a href={"https://" + `${advertLink[0]}`} target="_blank">
-                <img src={advertImg[0][2]} alt="add" />
-              </a>
+              <Link href="/products">
+                <img
+                  src={advertImg[0][2]}
+                  alt="add"
+                  // style={{ height: "190px" }}
+                />
+                <h3>mobile & gadgets</h3>
+              </Link>
             ) : (
               <a
-                href="https://wa.me/+2349029356196?text=Hello, I came across your platform and i would like to place an advert."
+                href="https://wa.me/08067279806?text=Hello, I came across your platform and i would like to place an advert."
                 target="_blank"
               >
                 <img src={defaultAdImg} alt="add" />
@@ -97,12 +113,17 @@ function Advert() {
         <Carousel.Slide>
           <div className="ad-img">
             {advertImg.length > 0 ? (
-              <a href={"https://" + `${advertLink[0]}`} target="_blank">
-                <img src={advertImg[0][3]} alt="add" />
-              </a>
+              <Link href="/products">
+                <img
+                  src={advertImg[0][3]}
+                  alt="add"
+                  // style={{ height: "190px" }}
+                />
+                <h3>electronics & appliance</h3>
+              </Link>
             ) : (
               <a
-                href="https://wa.me/+2349029356196?text=Hello, I came across your platform and i would like to place an advert."
+                href="https://wa.me/08067279806?text=Hello, I came across your platform and i would like to place an advert."
                 target="_blank"
               >
                 <img src={defaultAdImg} alt="add" />

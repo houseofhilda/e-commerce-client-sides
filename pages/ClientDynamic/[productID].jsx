@@ -515,7 +515,7 @@ function Details() {
           </div>
           {/* similar products */}
           <>
-            <h3 style={{ marginTop: "100px", color: "#3c91e6" }}>
+            <h3 style={{ marginTop: "100px", color: "#03a8a8" }}>
               {similarProducts.length > 0 && "SIMILAR PRODUCTS"}
             </h3>{" "}
             <div className="similar-products">
@@ -595,10 +595,6 @@ function SimilarProducts({
           {productoldprice && "₦ " + Number(productoldprice).toLocaleString()}
         </p>
       </div>
-
-      <Link href="/" className="addto-cart">
-        Add to cart
-      </Link>
     </div>
   );
 }

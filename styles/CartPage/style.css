@@ -162,8 +162,8 @@
   width: 100%;
   height: 100%;
   color: white;
-  background: #3c91e6;
-  border: 1px solid #3c91e6;
+  background: #ffce26;
+  border: 1px solid #ffce26;
 }
 .cart-page-con .single-product .checkout button:hover {
   transform: scale(0.99);
@@ -234,7 +234,7 @@
   }
 }
 .cart-page-con .product-con .cart-product-top .cart-product-lower .cart-product-lower-lower p {
-  color: #3c91e6;
+  color: #ffce26;
   font-size: 15px;
   cursor: pointer;
   display: flex;
@@ -257,7 +257,7 @@
   flex-direction: row;
 }
 .cart-page-con .product-con .cart-product-top .cart-product-lower .cart-product-lower-lower div .icon {
-  color: #3c91e6;
+  color: #ffce26;
   font-size: 25px;
   cursor: pointer;
 }

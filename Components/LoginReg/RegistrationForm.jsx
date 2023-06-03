@@ -124,7 +124,9 @@ function RegistrationForm() {
         <div className="login-top-title">
           <h2>Sign Up</h2>
           <p>Sign up to create a user acount on AJIS</p>
-          <p>Home / Signup</p>
+          <Link href="/">
+            <p>Home / Signup</p>
+          </Link>
         </div>
         <div className="form-con">
           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
@@ -196,7 +198,7 @@ function RegistrationForm() {
                     style={{
                       position: "absolute",
                       right: "54%",
-                      color: "#3c91e6",
+                      color: "#03a8a8",
                       fontSize: "20px",
                     }}
                   />
@@ -206,7 +208,7 @@ function RegistrationForm() {
                     style={{
                       position: "absolute",
                       right: "54%",
-                      color: "#3c91e6",
+                      color: "#03a8a8",
                       fontSize: "20px",
                     }}
                   />
@@ -228,7 +230,7 @@ function RegistrationForm() {
                     style={{
                       position: "absolute",
                       right: "5px",
-                      color: "#3c91e6",
+                      color: "#03a8a8",
                       fontSize: "20px",
                     }}
                   />
@@ -238,7 +240,7 @@ function RegistrationForm() {
                     style={{
                       position: "absolute",
                       right: "5px",
-                      color: "#3c91e6",
+                      color: "#03a8a8",
                       fontSize: "20px",
                     }}
                   />
@@ -384,7 +386,7 @@ function EnterOTP({ setNotificationModal, router }) {
                 flexDirection: "row",
               }}
               inputStyle={{
-                border: "2px solid #3c91e6",
+                border: "2px solid #ea9319",
                 width: "100%",
                 height: "100%",
                 fontSize: "30px",

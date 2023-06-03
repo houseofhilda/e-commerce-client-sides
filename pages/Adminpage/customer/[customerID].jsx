@@ -130,7 +130,7 @@ function CustomerID() {
     const token = Cookies.get("JWTtoken");
     await axios
       .patch(
-        "https://api-j.onrender.com/api/v1/userverification/updateuser/" +
+        "https://houseofhilda.onrender.com/api/v1/userverification/updateuser/" +
           `${userID}`,
         {
           position: e.target.value,
@@ -154,7 +154,7 @@ function CustomerID() {
     const token = Cookies.get("JWTtoken");
     await axios
       .patch(
-        "https://api-j.onrender.com/api/v1/userverification/updateuser/" +
+        "https://houseofhilda.onrender.com/api/v1/userverification/updateuser/" +
           `${userID}`,
         {
           block: true,
@@ -180,7 +180,7 @@ function CustomerID() {
     const token = Cookies.get("JWTtoken");
     await axios
       .patch(
-        "https://api-j.onrender.com/api/v1/userverification/updateuser/" +
+        "https://houseofhilda.onrender.com/api/v1/userverification/updateuser/" +
           `${userID}`,
         {
           block: false,
@@ -254,7 +254,7 @@ function CustomerID() {
                   </a>
                   <a
                     target="_blank"
-                    href={`https://wa.me/${userData?.userphonenumber}?text=Hello, I am a ${session?.user?.username} from AJIS STORES `}
+                    href={`https://wa.me/${userData?.userphonenumber}?text=Hello, I am a ${session?.user?.username} from PIUDA `}
                   >
                     <span>
                       <BsWhatsapp />
