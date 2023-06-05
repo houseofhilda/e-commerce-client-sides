@@ -9,6 +9,7 @@ import { MdDashboard, MdGroup, MdSettings } from "react-icons/md";
 import { RiMessage2Fill } from "react-icons/ri";
 import { BiLogOutCircle } from "react-icons/bi";
 import { FaStore, FaMoneyCheckAlt } from "react-icons/fa";
+import Cookies from "js-cookie";
 // import AdminDashboard from "../../Pages/Adminpage/AdminDashboard";
 function Sidebar() {
   const [active, setActive] = useState<number>(1);
@@ -40,6 +41,13 @@ function Sidebar() {
       return;
     }
   }, [router.pathname]);
+
+  // LOGOUT
+  const logOUT = () => {
+    Cookies.remove("JWTtoken");
+    location.reload();
+    router.push("/");
+  };
   return (
     <div>
       <section id="sidebar" className="sidebar">
@@ -95,16 +103,18 @@ function Sidebar() {
             className={`${active === 6 ? "active" : ""}`}
             onClick={() => setActive(0)}
           >
-            <a href="#" className="list-items">
+            <p className="list-items">
               <MdSettings className="list-icons" />
-              <span className="text">Settings</span>
-            </a>
+              <a href="Tel:08104015180" target="_blank">
+                <span className="text">AJIS</span>
+              </a>
+            </p>
           </li>
           <li
             className={`${active === 7 ? "active" : ""}`}
             onClick={() => setActive(0)}
           >
-            <a href="#" className="logout">
+            <a href="/" className="logout" onClick={() => logOUT()}>
               <BiLogOutCircle className="list-icons" />
               <span className="text">Logout</span>
             </a>

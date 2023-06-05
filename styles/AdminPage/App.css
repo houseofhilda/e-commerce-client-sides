@@ -171,7 +171,7 @@ body {
 .active-category {
   border: 1px solid var(--blue);
   color: white;
-  background: #3c91e6;
+  background: #ea9319;
   cursor: pointer;
 }
 

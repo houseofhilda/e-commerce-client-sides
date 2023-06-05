@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiFillBell } from "react-icons/ai";
 import { getSessionUser } from "../../Services/functions";
-
+import { FaMoneyCheckAlt } from "react-icons/fa";
 // ICONS
 import { GiBookCover } from "react-icons/gi";
 import { useRouter } from "next/router";
@@ -38,10 +38,16 @@ function Topbar() {
           <p style={{ textTransform: "uppercase" }}>{userPosition}</p>
         </div>
         <div className="dark-mode-con">
-          <div className="notification">
-            <AiFillBell className="bx bxs-bell" />
-            <span className="num">{transactionNotification.length}</span>
-          </div>
+          <a
+            href="https://dashboard.paystack.com/#/dashboard?period=30"
+            target="_blank"
+          >
+            {" "}
+            <div className="notification" style={{ fontSize: "40px" }}>
+              <FaMoneyCheckAlt className="bx bxs-bell" />
+              {/* <span className="num">withdraw fund</span> */}
+            </div>
+          </a>
         </div>
       </nav>
     </div>
