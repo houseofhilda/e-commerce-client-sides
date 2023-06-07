@@ -310,7 +310,7 @@ export const transactionStatus = async (
       `https://api.paystack.co/transaction/verify/${userData?.paystackRef}`,
       {
         headers: {
-          Authorization: `Bearer sk_test_3f383f1af75a39537da652b48d2325b2a0c4ba26`,
+          Authorization: `Bearer sk_test_61734ec51de3aa54ad6feb5079b30b4e78aecc67`,
         },
       }
     );

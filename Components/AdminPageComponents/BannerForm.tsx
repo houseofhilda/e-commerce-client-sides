@@ -88,101 +88,123 @@ function BannerForm() {
     setLoadingBannr(false);
     setSelectedBanner("");
   };
+  const [showSliderForm, setShowSliderForm] = useState(false);
+  const openForm = () => {
+    setShowSliderForm(!showSliderForm);
+  };
   return (
-    <div className="store-form-container">
-      {" "}
+    <div>
+      <button
+        onClick={() => openForm()}
+        style={{
+          // width: "150px",
+          padding: "10px",
+          color: "white",
+          background: "#ea9319",
+          height: "50px",
+          margin: "20px",
+          marginLeft: "10px",
+          marginTop: "10px",
+          cursor: "pointer",
+        }}
+      >
+        {showSliderForm ? "close" : "upload sliding image"}
+      </button>
+
       {/* BANNER POST */}
-      <form onSubmit={handleSubmit(onSubmitBanner)}>
-        {/* BANNER NAME */}
-        <label>Banner Name</label>
-        <input
-          type="text"
-          placeholder="Enter Banner Name"
-          {...register("bannername", { required: true })}
-        />
-        {errors.bannername && (
-          <span
-            className="errror-msg"
-            style={{
-              fontSize: "12px",
-              fontStyle: "italic",
-              color: "red",
-            }}
-          >
-            Kindly Enter Product Name
-          </span>
-        )}
-
-        {/* PRODUCT CATEGORY */}
-        <label>Banner Category</label>
-        <select {...register("bannercategory", { required: true })}>
-          <option value="">Select</option>
-          <option value="Shoe">Shoe</option>
-          <option value="Cloth">Cloth</option>
-          <option value="Watch">Watch</option>
-        </select>
-        {errors.bannercategory && (
-          <span
-            className="errror-msg"
-            style={{
-              fontSize: "12px",
-              fontStyle: "italic",
-              color: "red",
-            }}
-          >
-            Kindly Enter Product Category
-          </span>
-        )}
-
-        {/* BANNER DISCRIPTION */}
-        <label>Banner Description</label>
-        <textarea
-          // type="text"
-          placeholder="Enter Banner Description"
-          {...register("bannerscription", { required: true })}
-        />
-        {errors.bannerscription && (
-          <span
-            className="errror-msg"
-            style={{
-              fontSize: "12px",
-              fontStyle: "italic",
-              color: "red",
-            }}
-          >
-            Kindly Enter Product Description
-          </span>
-        )}
-        {/* BANNER IMAGE*/}
-        <label>Banner Image</label>
-        <p style={{ fontSize: "12px", fontStyle: "italic", color: "gray" }}>
-          <span style={{ color: "red" }}>Note:</span> This images uploaded
-          should be{" "}
-          <span style={{ fontWeight: "bolder" }}> LandScape Dimension </span>
-          with product item aligned to the center
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {/* IMAGE 1 */}
+      {showSliderForm && (
+        <form onSubmit={handleSubmit(onSubmitBanner)}>
+          {/* BANNER NAME */}
+          <label>Banner Name</label>
           <input
-            className="file-input"
-            type="file"
-            placeholder="Enter Product Number"
-            ref={bannerFilePickerRef1}
-            onChange={addImageToBanner}
+            type="text"
+            placeholder="Enter Banner Name"
+            {...register("bannername", { required: true })}
           />
-          <img
-            src={selectedBanner}
-            onClick={() => setSelectedBanner("")}
-            alt="img"
-            style={{ width: "40px", marginBottom: "10px" }}
+          {errors.bannername && (
+            <span
+              className="errror-msg"
+              style={{
+                fontSize: "12px",
+                fontStyle: "italic",
+                color: "red",
+              }}
+            >
+              Kindly Enter Product Name
+            </span>
+          )}
+
+          {/* PRODUCT CATEGORY */}
+          <label>Banner Category</label>
+          <select {...register("bannercategory", { required: true })}>
+            <option value="">Select</option>
+            <option value="Shoe">Shoe</option>
+            <option value="Cloth">Cloth</option>
+            <option value="Watch">Watch</option>
+          </select>
+          {errors.bannercategory && (
+            <span
+              className="errror-msg"
+              style={{
+                fontSize: "12px",
+                fontStyle: "italic",
+                color: "red",
+              }}
+            >
+              Kindly Enter Product Category
+            </span>
+          )}
+
+          {/* BANNER DISCRIPTION */}
+          <label>Banner Description</label>
+          <textarea
+            // type="text"
+            placeholder="Enter Banner Description"
+            {...register("bannerscription", { required: true })}
           />
-        </div>
-        <input
-          type="submit"
-          className="submit-btn"
-          value={loadingBanner ? "Uploading..." : "Upload Banner"}
-        />
-      </form>
+          {errors.bannerscription && (
+            <span
+              className="errror-msg"
+              style={{
+                fontSize: "12px",
+                fontStyle: "italic",
+                color: "red",
+              }}
+            >
+              Kindly Enter Product Description
+            </span>
+          )}
+          {/* BANNER IMAGE*/}
+          <label>Banner Image</label>
+          <p style={{ fontSize: "12px", fontStyle: "italic", color: "gray" }}>
+            <span style={{ color: "red" }}>Note:</span> This images uploaded
+            should be{" "}
+            <span style={{ fontWeight: "bolder" }}> LandScape Dimension </span>
+            with product item aligned to the center
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            {/* IMAGE 1 */}
+            <input
+              className="file-input"
+              type="file"
+              placeholder="Enter Product Number"
+              ref={bannerFilePickerRef1}
+              onChange={addImageToBanner}
+            />
+            <img
+              src={selectedBanner}
+              onClick={() => setSelectedBanner("")}
+              alt="img"
+              style={{ width: "40px", marginBottom: "10px" }}
+            />
+          </div>
+          <input
+            type="submit"
+            className="submit-btn"
+            value={loadingBanner ? "Uploading..." : "Upload Banner"}
+          />
+        </form>
+      )}
     </div>
   );
 }

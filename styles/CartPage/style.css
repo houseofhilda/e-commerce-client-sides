@@ -23,7 +23,7 @@
   cursor: pointer;
   margin: 10px;
   margin-left: 5px;
-  background: rgba(60, 145, 230, 0.7764705882);
+  background: #ea9319;
   border: 1px solid rgba(128, 128, 128, 0.168627451);
   color: white;
   width: 70px;
@@ -121,7 +121,7 @@
     border: none;
     cursor: pointer;
     color: white;
-    background: #3c91e6;
+    background: #ea9319;
   }
   .cart-page-con .subtotal .checkout:hover button {
     background: #1a426a;

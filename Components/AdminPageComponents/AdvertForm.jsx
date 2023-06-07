@@ -203,11 +203,32 @@ function AdvertForm({ advertDetails }) {
     setSelectedFile3("");
     setSelectedFile4("");
   };
+  const [showSliderForm, setShowSliderForm] = useState(false);
+  const openForm = () => {
+    setShowSliderForm(!showSliderForm);
+  };
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {/* AD LINK */}
-        <label>Advert Link</label>
+      <button
+        onClick={() => openForm()}
+        style={{
+          // width: "150px",
+          padding: "10px",
+          color: "white",
+          background: "#ea9319",
+          height: "50px",
+          margin: "20px",
+          marginLeft: "10px",
+          marginTop: "10px",
+          cursor: "pointer",
+        }}
+      >
+        {showSliderForm ? "close" : "upload sliding image"}
+      </button>
+      {showSliderForm && (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* AD LINK */}
+          {/* <label>Advert Link</label>
         <input
           type="text"
           placeholder="www.example.com"
@@ -224,94 +245,95 @@ function AdvertForm({ advertDetails }) {
           >
             Kindly Enter the Advert website or social media Link
           </span>
-        )}
+        )} */}
 
-        {/* PRODUCT IMAGE*/}
-        <label>Advert Images</label>
-        <p style={{ fontSize: "12px", fontStyle: "italic", color: "gray" }}>
-          <span style={{ color: "red" }}>Note:</span> This images uploaded
-          should be
-          <span style={{ fontWeight: "bolder" }}>Landscape Dimension</span> and
-          all Ad image should have same with and height
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {/* IMAGE 1 */}
-          <input
-            className="file-input"
-            type="file"
-            placeholder="Enter Product Number"
-            ref={filePickerRef1}
-            onChange={addImageToPost1}
-          />
-          <img
-            src={selectedFile1}
-            onClick={() => setSelectedFile1("")}
-            alt="img"
-            style={{ width: "40px", marginBottom: "10px" }}
-          />
-          {/* IMAGE 2 */}
-          <input
-            className="file-input"
-            type="file"
-            placeholder="Enter Product Number"
-            ref={filePickerRef2}
-            onChange={addImageToPost2}
-          />
-          <img
-            src={selectedFile2}
-            onClick={() => setSelectedFile2("")}
-            alt="img"
-            style={{ width: "40px", marginBottom: "10px" }}
-          />
-          {/* IMAGE 3 */}
-          <input
-            className="file-input"
-            type="file"
-            placeholder="Enter Product Number"
-            ref={filePickerRef3}
-            onChange={addImageToPost3}
-          />
-          <img
-            src={selectedFile3}
-            onClick={() => setSelectedFile3("")}
-            alt="img"
-            style={{ width: "40px", marginBottom: "10px" }}
-          />
-          {/* IMAGE 4 */}
-          <input
-            className="file-input"
-            type="file"
-            placeholder="Enter Product Number"
-            ref={filePickerRef4}
-            onChange={addImageToPost4}
-          />
-          <img
-            src={selectedFile4}
-            onClick={() => setSelectedFile4("")}
-            alt="img"
-            style={{ width: "40px", marginBottom: "10px" }}
-          />
-        </div>
-        {advertDetails.length === 1 ? (
-          <>
-            <p style={{ color: "red", fontStyle: "italic" }}>
-              You already have an ad running, Delete add to add new one
-            </p>
+          {/* PRODUCT IMAGE*/}
+          <label>Sliding Images</label>
+          <p style={{ fontSize: "12px", fontStyle: "italic", color: "gray" }}>
+            <span style={{ color: "red" }}>Note:</span> This images uploaded
+            should be{" "}
+            <span style={{ fontWeight: "bolder" }}>Landscape Dimension</span>{" "}
+            and all Ad image should have same with and height
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            {/* IMAGE 1 */}
             <input
-              //   type="submit"
-              className="submit-btn"
-              //   value={}
-              disabled={true}
+              className="file-input"
+              type="file"
+              placeholder="Enter Product Number"
+              ref={filePickerRef1}
+              onChange={addImageToPost1}
             />
-          </>
-        ) : (
-          <input
-            type="submit"
-            className="submit-btn"
-            value={loading ? "Uploading..." : "Upload Product"}
-          />
-        )}
-      </form>
+            <img
+              src={selectedFile1}
+              onClick={() => setSelectedFile1("")}
+              alt="img"
+              style={{ width: "40px", marginBottom: "10px" }}
+            />
+            {/* IMAGE 2 */}
+            <input
+              className="file-input"
+              type="file"
+              placeholder="Enter Product Number"
+              ref={filePickerRef2}
+              onChange={addImageToPost2}
+            />
+            <img
+              src={selectedFile2}
+              onClick={() => setSelectedFile2("")}
+              alt="img"
+              style={{ width: "40px", marginBottom: "10px" }}
+            />
+            {/* IMAGE 3 */}
+            <input
+              className="file-input"
+              type="file"
+              placeholder="Enter Product Number"
+              ref={filePickerRef3}
+              onChange={addImageToPost3}
+            />
+            <img
+              src={selectedFile3}
+              onClick={() => setSelectedFile3("")}
+              alt="img"
+              style={{ width: "40px", marginBottom: "10px" }}
+            />
+            {/* IMAGE 4 */}
+            <input
+              className="file-input"
+              type="file"
+              placeholder="Enter Product Number"
+              ref={filePickerRef4}
+              onChange={addImageToPost4}
+            />
+            <img
+              src={selectedFile4}
+              onClick={() => setSelectedFile4("")}
+              alt="img"
+              style={{ width: "40px", marginBottom: "10px" }}
+            />
+          </div>
+          {advertDetails.length === 1 ? (
+            <>
+              <p style={{ color: "red", fontStyle: "italic" }}>
+                You already have an ad running, Delete add to add new one
+              </p>
+              <input
+                //   type="submit"
+                className="submit-btn"
+                //   value={}
+                disabled={true}
+              />
+            </>
+          ) : (
+            <input
+              type="submit"
+              className="submit-btn"
+              value={loading ? "Uploading..." : "Upload Product"}
+            />
+          )}
+        </form>
+      )}
     </div>
   );
 }

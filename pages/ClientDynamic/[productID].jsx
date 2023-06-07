@@ -423,7 +423,7 @@ function Details() {
                     <label>User Name</label>
                     <input
                       type="text"
-                      defaultValue={userDetails?.username || ""}
+                      value={userDetails?.username || ""}
                       placeholder="eg. John Doe"
                       {...register("username", { required: true })}
                     />
@@ -443,7 +443,7 @@ function Details() {
                     <label>User Email</label>
                     <input
                       type="email"
-                      defaultValue={userDetails?.useremail || ""}
+                      value={userDetails?.useremail || ""}
                       placeholder="Enter Your Email"
                       {...register("useremail", { required: true })}
                     />
