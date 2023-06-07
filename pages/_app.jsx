@@ -95,7 +95,7 @@ export default function MyApp({ Component, pageProps }) {
           rel="apple-touch-icon"
           href="https://res.cloudinary.com/dk3iqiy2e/image/upload/v1685825962/WhatsApp_Image_2023-05-30_at_12.36.37_AM-removebg-preview_kxnfud.png"
         ></link>
-        <meta name="theme-color" content="#317EFB" />
+        <meta name="theme-color" content="white" />
       </Head>
       <MantineProvider withNormalizeCSS withGlobalStyles>
         <Notifications position="top-right" zIndex={2077} />
