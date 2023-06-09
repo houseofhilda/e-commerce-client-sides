@@ -143,8 +143,8 @@ function Footer() {
               </a>{" "}
             </p>
             <p className="links">
-              <b>Physical Address:</b> Shop 39 Gabano shopping Complex directly
-              opposite UBTH, Benin city, Edo state, Nigeria
+              <b>Physical Address:</b> No 12 Okumose Street off Ekosodin road,
+              Evbuomore Quarters Ugbowo ,Benin City Edo State
             </p>
             <p className="links">(+234) 806 727 9806</p>
           </div>

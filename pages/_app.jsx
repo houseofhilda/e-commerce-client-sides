@@ -75,10 +75,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="keywords" content="Keywords" />
         <title>House of Hilda</title>
 
-        <link
-          rel="manifest"
-          href="https://res.cloudinary.com/dk3iqiy2e/image/upload/v1685825962/WhatsApp_Image_2023-05-30_at_12.36.37_AM-removebg-preview_kxnfud.png"
-        />
+        <link rel="manifest" href="/manifest.json" />
         <link
           href="https://res.cloudinary.com/dk3iqiy2e/image/upload/v1685825962/WhatsApp_Image_2023-05-30_at_12.36.37_AM-removebg-preview_kxnfud.png"
           rel="icon"
