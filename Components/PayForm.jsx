@@ -36,7 +36,7 @@ function PayForm({
         // calculate the total cost
         const newProduct = {
           productname: p.productname,
-          productspec: p.productnumber,
+          productspec: p.productspec,
           productprice: p.productprice / p.quantity,
           quantity: p.quantity,
         };

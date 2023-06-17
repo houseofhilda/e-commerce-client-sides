@@ -141,6 +141,7 @@ function CartProducts({
         ...currentState[index],
         quantity: newCount,
         productprice: newPriceNumber,
+        productspec: productnumber,
       };
       currentState.splice(index, 1, newProduct);
       setProductsArray([...currentState]);
@@ -150,6 +151,7 @@ function CartProducts({
         productname,
         productprice: priceNumber,
         quantity: count,
+        productnumber,
       };
       setProductsArray([...currentState, newProduct]);
       setTotalAmount(totalAmount + priceNumber);
