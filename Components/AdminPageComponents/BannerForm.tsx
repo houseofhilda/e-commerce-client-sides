@@ -116,7 +116,7 @@ function BannerForm() {
         <form onSubmit={handleSubmit(onSubmitBanner)}>
           {/* BANNER NAME */}
           <label>Banner Name</label>
-          <input
+          {/* <input
             type="text"
             placeholder="Enter Banner Name"
             {...register("bannername", { required: true })}
@@ -132,10 +132,10 @@ function BannerForm() {
             >
               Kindly Enter Product Name
             </span>
-          )}
+          )} */}
 
           {/* PRODUCT CATEGORY */}
-          <label>Banner Category</label>
+          {/* <label>Banner Category</label>
           <select {...register("bannercategory", { required: true })}>
             <option value="">Select</option>
             <option value="Shoe">Shoe</option>
@@ -153,10 +153,10 @@ function BannerForm() {
             >
               Kindly Enter Product Category
             </span>
-          )}
+          )} */}
 
           {/* BANNER DISCRIPTION */}
-          <label>Banner Description</label>
+          {/* <label>Banner Description</label>
           <textarea
             // type="text"
             placeholder="Enter Banner Description"
@@ -173,7 +173,7 @@ function BannerForm() {
             >
               Kindly Enter Product Description
             </span>
-          )}
+          )} */}
           {/* BANNER IMAGE*/}
           <label>Banner Image</label>
           <p style={{ fontSize: "12px", fontStyle: "italic", color: "gray" }}>
