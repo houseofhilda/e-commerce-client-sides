@@ -223,7 +223,7 @@ function AdvertForm({ advertDetails }) {
           cursor: "pointer",
         }}
       >
-        {showSliderForm ? "close" : "upload sliding image"}
+        {showSliderForm ? "close" : "upload sliding"}
       </button>
       {showSliderForm && (
         <form onSubmit={handleSubmit(onSubmit)}>

@@ -224,7 +224,7 @@ function ProductForm() {
           cursor: "pointer",
         }}
       >
-        {showSliderForm ? "close" : "upload banner image "}
+        {showSliderForm ? "close" : "upload products "}
       </button>
       {showSliderForm && (
         <form onSubmit={handleSubmit(onSubmit)}>

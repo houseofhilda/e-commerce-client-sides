@@ -108,7 +108,7 @@ function BannerForm() {
           cursor: "pointer",
         }}
       >
-        {showSliderForm ? "close" : "upload sliding image"}
+        {showSliderForm ? "close" : "upload Banner"}
       </button>
 
       {/* BANNER POST */}
