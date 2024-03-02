@@ -159,7 +159,7 @@ function transactionrecipt() {
             </div>
             <div className="transaction-status" style={{ width: "95%" }}>
               <span>Date / Time:</span>
-              <span> {userData?.timestamp.substring(0, 20).toString()}</span>
+              <span> {userData?.timestamp}</span>
             </div>
             <div className="transaction-status" style={{ width: "95%" }}>
               <span>Delivery address:</span>
