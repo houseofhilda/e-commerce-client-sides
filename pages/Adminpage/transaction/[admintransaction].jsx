@@ -270,7 +270,7 @@ function admintransaction() {
                   <span>Date / Time:</span>
                   <span>
                     {" "}
-                    {userData?.timestamp?.substring(0, 20).toString()}
+                    {userData?.timestamp}
                   </span>
                 </div>
                 <div className="transaction-status" style={{ width: "95%" }}>
@@ -313,9 +313,7 @@ function admintransaction() {
                       session?.user.username
                     } from HOUSE OF HILDA, I am chatting as regards your Order with Ref No. ${
                       userData?.paystackRef
-                    } made on ${userData?.timestamp
-                      .substring(0, 20)
-                      .toString()}`}
+                    } made on ${userData?.timestamp.toString()}`}
                   >
                     <span>
                       <BsWhatsapp />
