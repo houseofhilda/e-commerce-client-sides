@@ -138,7 +138,7 @@ function StoreItemsIndividual({
         <td style={{ width: "10%", margin: "5px" }}>{productcategory}</td>
         <td style={{ width: "10%", margin: "5px" }}>{productclass}</td>
         <td style={{ width: "27%", margin: "5px" }}>
-          {productdescription.substring(0, 70)} . . .
+          {productdescription} . . .
         </td>
         <td
           style={{

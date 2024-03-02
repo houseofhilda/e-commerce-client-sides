@@ -117,7 +117,6 @@ function StoreItemsIndividual({
           }}
         >
           <b className="delete-product-btn" onClick={() => deleteProduct(id)}>
-            {" "}
             DELETE
           </b>
         </td>
